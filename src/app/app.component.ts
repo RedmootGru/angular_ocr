@@ -26,7 +26,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.appareils = this.appareilService.appareils;
+    this.appareils = this.appareilService.getAppareils();
     const counter = Observable.interval(1000);
 
     this.counterSubscription = counter.subscribe(

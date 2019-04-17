@@ -22,6 +22,8 @@ export class AppareilService {
     }
   ];
 
+  getAppareils = () => this.appareils;
+
   addAppareil(name: string, status: string) {
     const apparailObject = {
       id : 0,
@@ -66,12 +68,11 @@ export class AppareilService {
   }
 
   getAppareilById(id: number) {
-    const appareil = this.appareils.find(
+    return this.appareils.find(
       (s) => {
         return s.id === id;
       }
     );
-    return appareil;
   }
 
 }
