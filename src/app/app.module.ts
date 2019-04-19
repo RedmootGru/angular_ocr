@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   { path: 'new-user', canActivate: [AuthGuard], component: NewUserComponent },
   { path: '', component: AppareilViewComponent },
   { path: 'not-found', component: FourOhFourComponent },
-  { path: '**', redirectTo: 'not-found' }
+  { path: '**', redirectTo: '/not-found' }
 ];
 
 @NgModule({
