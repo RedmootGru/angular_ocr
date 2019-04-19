@@ -12,7 +12,7 @@ export class AppareilViewComponent implements OnInit, OnDestroy {
 
   isAuth = false;
 
-  lastUpdate = new Promise((resolve, reject) => {
+  lastUpdate = new Promise((resolve) => {
 
     const date = new Date();
 
@@ -53,4 +53,11 @@ export class AppareilViewComponent implements OnInit, OnDestroy {
     this.appareilSubscription.unsubscribe();
   }
 
+  onSave() {
+    this.appareilService.saveAppareilsToServer();
+  }
+
+  onLoad() {
+    this.appareilService.getAppareilsFromServer();
+  }
 }

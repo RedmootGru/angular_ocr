@@ -1,5 +1,4 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AppareilService} from './services/appareil.service';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs-compat/add/observable/interval';
 import {Subscription} from 'rxjs';
@@ -13,12 +12,10 @@ import {Subscription} from 'rxjs';
 export class AppComponent implements OnInit, OnDestroy {
   isAuth = false;
 
-  appareils: any[];
-
   secondes: number;
   counterSubscription: Subscription;
 
-  constructor(private appareilService: AppareilService) {
+  constructor() {
     setTimeout(
       () => {
         this.isAuth = true;
@@ -26,7 +23,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.appareils = this.appareilService.appareils;
     const counter = Observable.interval(1000);
 
     this.counterSubscription = counter.subscribe(
